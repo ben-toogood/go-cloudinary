@@ -21,22 +21,22 @@ func TestTransformImage(t *testing.T) {
 		{
 			name:            "Height transformation",
 			transformations: []Transformation{SizeTransformation{Height: 100}},
-			url:             fmt.Sprintf("%v/%v/image/upload/h_100/%v", baseResourceUrl, srv.CloudName(), publicID),
+			url:             fmt.Sprintf("%v/%v/image/upload/c_fit,h_100/%v", baseResourceUrl, srv.CloudName(), publicID),
 		},
 		{
 			name:            "Width transformation",
 			transformations: []Transformation{SizeTransformation{Width: 100}},
-			url:             fmt.Sprintf("%v/%v/image/upload/w_100/%v", baseResourceUrl, srv.CloudName(), publicID),
+			url:             fmt.Sprintf("%v/%v/image/upload/c_fit,w_100/%v", baseResourceUrl, srv.CloudName(), publicID),
 		},
 		{
 			name:            "Width and height transformations",
 			transformations: []Transformation{SizeTransformation{Height: 100, Width: 100}},
-			url:             fmt.Sprintf("%v/%v/image/upload/w_100,h_100/%v", baseResourceUrl, srv.CloudName(), publicID),
+			url:             fmt.Sprintf("%v/%v/image/upload/c_fit,w_100,h_100/%v", baseResourceUrl, srv.CloudName(), publicID),
 		},
 		{
 			name:            "Width and invalid height transformations",
 			transformations: []Transformation{SizeTransformation{Height: -100, Width: 100}},
-			url:             fmt.Sprintf("%v/%v/image/upload/w_100/%v", baseResourceUrl, srv.CloudName(), publicID),
+			url:             fmt.Sprintf("%v/%v/image/upload/c_fit,w_100/%v", baseResourceUrl, srv.CloudName(), publicID),
 		},
 	}
 

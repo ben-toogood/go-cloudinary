@@ -15,11 +15,12 @@ type Transformation interface {
 type SizeTransformation struct {
 	Width  int
 	Height int
+	// TODO: Add multiple resize options
 }
 
 // URLEncoded returns the URL path component required for transformation
 func (t SizeTransformation) URLEncoded() string {
-	var components []string
+	components := []string{"c_fit"}
 
 	if t.Width > 0 {
 		components = append(components, fmt.Sprintf("w_%v", t.Width))
