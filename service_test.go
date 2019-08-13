@@ -71,7 +71,7 @@ func TestKeepFiles(t *testing.T) {
 	pat = "images/\\.jpg$"
 	err := s.KeepFiles(pat)
 	if err != nil {
-		t.Errorf("valid pattern should return no error", pat)
+		t.Errorf("valid pattern should return no error but got %v", pat)
 	}
 	if s.keepFilesPattern == nil {
 		t.Errorf(".keepFilesPattern attribute is still nil with a valid pattern")
